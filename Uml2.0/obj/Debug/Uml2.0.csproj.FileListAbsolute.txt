@@ -1,0 +1,10 @@
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\bin\Debug\Uml2.0.exe.config
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\bin\Debug\Uml2.0.exe
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\bin\Debug\Uml2.0.pdb
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\obj\Debug\Uml2.0.csprojAssemblyReference.cache
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\obj\Debug\Uml2._0.Properties.Resources.resources
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\obj\Debug\Uml2.0.csproj.GenerateResource.cache
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\obj\Debug\Uml2.0.csproj.CoreCompileInputs.cache
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\obj\Debug\Uml2.0.exe
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\obj\Debug\Uml2.0.pdb
+C:\Users\Katerina\source\repos\Uml2.0\Uml2.0\obj\Debug\Uml2.Arrows.Form1.resources

@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace Uml2.Arrows
+
+{
+    public abstract class AbstractArrow
+    {
+        protected Pen _penForLine { get; set; }
+        protected Pen _penForArrow { get; set; }
+
+        public Point StartPoint{get;set;}
+        public Point EndPoint { get; set; }
+        public double angle { get; set; }
+        public double arrow_lenght { get; set; }
+
+        public double arrow_degrees { get; set; }// размах крыльев или острота угла 
+
+        public double x1 { get; set; }
+        public double y1 { get; set; }
+        public double x2 { get; set; }
+        public double y2 { get; set; }
+        public double x3 { get; set; }
+        public double y3 { get; set; }
+        public double x4 { get; set; }
+        public double y4 { get; set; }
+
+        int hightTriangle;
+
+        protected bool isClicked { get; set; }
+         
+        public void MouseDown(object sender, MouseEventArgs e)
+        {
+            isClicked = true;
+            StartPoint = new Point(e.X, e.Y);
+        }
+        public abstract void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics);
+        public abstract void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics, Pen penForLine, Pen penForF);
+        public abstract void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics, Pen pen);
+        
+        public abstract void DrawCurvedLine(Graphics graphics);
+
+    }
+}
