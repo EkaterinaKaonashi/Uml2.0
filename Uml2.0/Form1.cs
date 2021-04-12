@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using Uml2._0.Arrows;
+using Uml2.Arrows;
 
 
 namespace Uml2.Arrows
@@ -24,11 +25,13 @@ namespace Uml2.Arrows
         static Pen pen = new Pen(Color.Black, 3);
         static Pen pen1 = new Pen(Color.Red, 3); // почему тут нужен статик, без него не передается 
 
-        AssociationArrow AA = new AssociationArrow();
-        InheritanceArrow II = new InheritanceArrow();
-        AddictionArrow Ad = new AddictionArrow();
-        RealizationArrow Re = new RealizationArrow();
-        AggregationArrow Ag = new AggregationArrow();
+        string action = "";
+
+        AssociationArrow associationArrow;
+        InheritanceArrow inheritanceArrow;
+        AddictionArrow addictionArrow;
+        RealizationArrow realizationArrow;
+        AggregationArrow aggregationArrow;
 
 
         public Form1()
@@ -51,7 +54,28 @@ namespace Uml2.Arrows
 
                 //_graphics.DrawLine(pen, start, cur);
                 //pen1.DashStyle = DashStyle.Dash;
-                Ag.Draw(cur, start, isClicked, _graphics, pen);
+                switch (action)
+                {
+                    case "inheritanceArrow":
+                        inheritanceArrow.Draw(cur, start, isClicked, _graphics, pen);
+                        break;
+                    case "associationArrow":
+                        associationArrow.Draw(cur, start, isClicked, _graphics, pen);
+                        break;
+                    case "addictionArrow":
+                        addictionArrow.Draw(cur, start, isClicked, _graphics, pen);
+                        break;
+                    case "aggregationArrow":
+                        aggregationArrow.Draw(cur, start, isClicked, _graphics, pen);
+                        break;
+                    default:
+                        break;
+                }
+                //Ag.Draw(cur, start, isClicked, _graphics, pen);
+               
+                
+                
+                
                 pictureBox1.Image = _tmpBitmap;
 
             }
@@ -91,12 +115,46 @@ namespace Uml2.Arrows
 
         private void InheritanceArrow_Click(object sender, EventArgs e)
         {
-            InheritanceArrow inheritanceArrow = new InheritanceArrow();
+            inheritanceArrow = new InheritanceArrow();
             
-            
+
+            action = "inheritanceArrow";
+
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            associationArrow = new AssociationArrow();
+            action = "associationArrow";
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            addictionArrow = new AddictionArrow();
+            action = "addictionArrow";
+        }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            RealizationArrow realizationArrow = new RealizationArrow();
+            action = "realizationArrow";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            aggregationArrow = new AggregationArrow();
+            action = "aggregationArrow";
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            pen.Width = trackBar1.Value;
+        }
+
+        private void colorLineButton_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            pen.Color = colorDialog1.Color;
+        }
     }
 }

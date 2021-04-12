@@ -39,6 +39,19 @@ namespace Uml2._0.Arrows
                 graphics.DrawLine(_penForLine, x1y1, x2y2);
             }
         }
+        private void DrawInheritanceArrow(Point mCur, Point mStart, bool mouseDown, Graphics graphics, Pen pen)
+        {
+            Point x1y1, x2y2, x3y3;
+            СalculationOfAngles(ref mCur, ref mStart, out x1y1, out x2y2, out x3y3);
+
+            if (mouseDown == true)
+            {
+                graphics.DrawLine(pen, mCur, mStart); // тут рисуем линию 
+                graphics.DrawLine(pen, x3y3, x1y1);
+                graphics.DrawLine(pen, x3y3, x2y2);
+                graphics.DrawLine(pen, x1y1, x2y2);
+            }
+        }
         private void DrawInheritanceArrow(Point mCur, Point mStart, bool mouseDown, Graphics graphics, Pen penForLine, Pen penForF)
         {
             Point x1y1, x2y2, x3y3;
@@ -55,6 +68,10 @@ namespace Uml2._0.Arrows
         public override void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics)
         {
             DrawInheritanceArrow(mCur, mStart, mouseDown, graphics);
+        }
+        public override void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics,Pen pen)
+        {
+            DrawInheritanceArrow(mCur, mStart, mouseDown, graphics,pen);
         }
         public override void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics, Pen penForLine, Pen penForF)
         {

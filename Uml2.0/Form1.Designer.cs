@@ -35,7 +35,12 @@ namespace Uml2.Arrows
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.colorLineButton = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -70,6 +75,7 @@ namespace Uml2.Arrows
             this.button2.TabIndex = 2;
             this.button2.Text = "Ассоциация";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -79,6 +85,7 @@ namespace Uml2.Arrows
             this.button3.TabIndex = 3;
             this.button3.Text = "Зависимость";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -88,6 +95,7 @@ namespace Uml2.Arrows
             this.button4.TabIndex = 4;
             this.button4.Text = "Агрегация ";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -95,14 +103,48 @@ namespace Uml2.Arrows
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(163, 33);
             this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
+            this.button5.Text = "Реализация";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(0, 446);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(144, 45);
+            this.trackBar1.TabIndex = 6;
+            this.trackBar1.Value = 2;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-2, 427);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Толщина";
+            // 
+            // colorLineButton
+            // 
+            this.colorLineButton.Location = new System.Drawing.Point(0, 497);
+            this.colorLineButton.Name = "colorLineButton";
+            this.colorLineButton.Size = new System.Drawing.Size(163, 37);
+            this.colorLineButton.TabIndex = 13;
+            this.colorLineButton.Text = "Цвет";
+            this.colorLineButton.UseMnemonic = false;
+            this.colorLineButton.UseVisualStyleBackColor = true;
+            this.colorLineButton.Click += new System.EventHandler(this.colorLineButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 553);
+            this.ClientSize = new System.Drawing.Size(1246, 546);
+            this.Controls.Add(this.colorLineButton);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -113,7 +155,9 @@ namespace Uml2.Arrows
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -125,6 +169,10 @@ namespace Uml2.Arrows
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button colorLineButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

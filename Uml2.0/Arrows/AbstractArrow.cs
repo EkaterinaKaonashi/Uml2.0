@@ -15,8 +15,8 @@ namespace Uml2.Arrows
 {
     public abstract class AbstractArrow
     {
-        protected Pen _penForLine { get; set; }
-        protected Pen _penForArrow { get; set; }
+        public Pen _penForLine { get; set; }
+        public Pen _penForArrow { get; set; }
 
         public Point StartPoint{get;set;}
         public Point EndPoint { get; set; }
@@ -44,8 +44,8 @@ namespace Uml2.Arrows
             StartPoint = new Point(e.X, e.Y);
         }
         public abstract void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics);
-        public abstract void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics, Pen penForLine, Pen penForF);
         public abstract void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics, Pen pen);
+        public abstract void Draw(Point mCur, Point mStart, bool mouseDown, Graphics graphics, Pen penForLine, Pen penForF);
         
         public abstract void DrawCurvedLine(Graphics graphics);
 
